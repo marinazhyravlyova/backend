@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const productRoute = require('./src/module/product/route');
+const mealRoute = require('./src/module/meal/route');
 const userRoute = require('./src/module/user/route');
 const app = express();
 const port = 3000;
@@ -14,6 +15,7 @@ app.use((req, res, next) => {
     next();
 });
 app.use('/product', productRoute);
+app.use('/meal', mealRoute);
 app.use('/user', userRoute);
 
 mongoose

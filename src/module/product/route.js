@@ -5,7 +5,6 @@ const router = express.Router();
 router.use((req, res, next) => { next() });
 
 router.get('/all', (req, res) => {
-    console.log('products All!');
     ProductModel.find().then(products => {
         res.send(products);
     });
